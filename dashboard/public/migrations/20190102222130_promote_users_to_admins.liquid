@@ -1,0 +1,4 @@
+{% query_graph "modules/dashboard/get_users" %}
+{% for user in g.users.results %}
+  {% execute_query "modules/dashboard/create_first_admin", id: user.id %}
+{% endfor %}

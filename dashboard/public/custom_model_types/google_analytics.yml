@@ -1,0 +1,4 @@
+name: Google Analytics
+custom_attributes:
+- name: tracking_id
+  type: string

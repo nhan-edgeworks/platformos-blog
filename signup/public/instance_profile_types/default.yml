@@ -1,0 +1,8 @@
+---
+name: Default
+admin_approval: false
+create_company_on_sign_up: false
+custom_attributes:
+- name: password_token
+  attribute_type: string
+---

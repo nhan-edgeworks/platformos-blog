@@ -1,0 +1,4 @@
+name: Dashboard Settings
+custom_attributes:
+- name: project_name
+  type: string
