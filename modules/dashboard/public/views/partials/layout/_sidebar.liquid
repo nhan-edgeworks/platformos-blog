@@ -13,17 +13,12 @@
           Users
         </a>
       </li>
-      {% capture "check_for_blog_module" %}
-        {%- include 'modules/dashboard_blog/blog/post' -%}
-      {% endcapture %}
-      {% unless check_for_blog_module contains "can't find partial" %}
-        <li class="nav-item">
-          <a class="nav-link {% if context.location.href == '/dashboard/blog' %}active{% endif %}" href="/dashboard/blog">
-            <span data-feather="file"></span>
-            Blog
-          </a>
-        </li>
-      {% endunless %}
+      <li class="nav-item">
+        <a class="nav-link {% if context.location.href == '/dashboard/blog' %}active{% endif %}" href="/dashboard/blog">
+          <span data-feather="file"></span>
+          Blog
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/dashboard/google_analytics">
           <span data-feather="layers"></span>

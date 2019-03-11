@@ -15,14 +15,15 @@
 </head>
 
 <body class="{% if is_logged_in %}logged-in{% endif %}">
+  {%- include '<%= &header_path =%>' -%}
   {% include 'modules/dashboard_blog/layouts/blog/fb' %}
   {% include 'modules/dashboard_blog/layouts/blog/icons' %}
-  {% include 'layouts/header' %}
+  {% comment %} {% include 'layouts/header' %} {% endcomment %}
   {% include 'modules/utils/flash_messages' %}
 
   <main class="">
     {{ content_for_layout }}
-    {%- include 'layouts/footer' -%}
+    {%- include '<%= &footer_path =%>' -%}
   </main>
 
   {%- include 'modules/dashboard_blog/layouts/blog/javascripts' -%}

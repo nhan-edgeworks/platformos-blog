@@ -22,18 +22,15 @@ install as module to modules/ directory of your projcet
 
 ### Useage
 
-After installation go do `/sign-up` path in your website and create first user.
-
-Then create and execute migration to give administrative access to your user:
+After installation go to `/log-in` path and log-in as default user with:
 
 ```
-{% assign email = [YOUR_USER_EMAIL] %}
-{% query_graph "modules/dashboard/get_users", email: email %}
-{% assign user_id = g.users.results.first.id %}
-{% execute_query "modules/dashboard/create_first_admin", id: user_id %}
+email: admin@example.com
+password: admin1234
 ```
 
-Log in as your adminstrator and enjoy your dashboard.
+Create new user and remove default admin.
+
 
 ### Contribution guidelines ###
 

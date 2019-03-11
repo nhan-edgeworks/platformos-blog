@@ -1,5 +1,9 @@
 # platformos-blog
 
+# Local deployment
+
+`mk deploy local -p`
+
 # Creating new releae
 
 1. Go to https://portal.apps.near-me.com/pos_modules/19 to get latest release version

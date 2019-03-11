@@ -8,22 +8,10 @@
   </head>
 
   <body class="signup {% if is_logged_in %}logged-in{% endif %}">
-    {% capture "check_for_config" %}
-      {% include 'layouts/header' %}
-    {% endcapture %}
-    {% unless check_for_config contains "can't find partial" %}
-      {% include 'layouts/header' %}
-    {% endunless %} 
 
     <div class="main">
       {{ content_for_layout }}
     </div>
-    {% capture "check_for_config" %}
-      {% include 'layouts/footer' %}
-    {% endcapture %}
-    {% unless check_for_config contains "can't find partial" %}
-      {% include 'layouts/footer' %}
-    {% endunless %} 
 
     {% include 'modules/signup/layouts/application/javascripts' %}
   </body>

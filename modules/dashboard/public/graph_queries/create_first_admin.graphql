@@ -1,8 +1,11 @@
-mutation crate_first_admin($id: ID) {
-  user_update (
-    id: $id
+mutation crate_first_admin {
+  user_create (
     form_configuration_name: "modules/dashboard/user_form"
     user: {
+      first_name: "Admin"
+      last_name: "Admin"
+      email: "admin@example.com"
+      password: "admin1234"
       profiles: [
         {
           name: "modules/dashboard/dashboard"
