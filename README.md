@@ -15,3 +15,9 @@
     git tag -a v1.0.4
     git push --tags
   ```
+
+
+
+# Blog Setup Instructions
+
+After installation go to http://YOUR_INSTANCE_URL/log-in and log in with email admin@example.com and password admin1234, you will be redirected to dashboard where you can set up your blog.
