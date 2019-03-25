@@ -20,4 +20,4 @@
 
 # Blog Setup Instructions
 
-After installation go to http://YOUR_INSTANCE_URL/log-in and log in with email admin@example.com and password admin1234, you will be redirected to dashboard where you can set up your blog.
+After installation go to http://YOUR_INSTANCE_URL/log-in and log in with email admin@example.com and password admin1234. You can now access the dashboard located under url http://YOUR_INSTANCE_URL/dashboard, and set up your blog.
