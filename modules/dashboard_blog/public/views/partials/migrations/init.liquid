@@ -1,0 +1,31 @@
+{% parse_json 'blog_instance' %}
+  {
+    "custom_model_type_name": "modules/dashboard_blog/blog_instance",
+    "properties": [
+      { "name": "title", "value": "PlatformOS Blog" },
+      { "name": "subtitle", "value": "" } ,
+      { "name": "enabled", "value": "true" },
+      { "name": "slug", "value": "blog" },
+      { "name": "scope", "value": "blog" },
+      { "name": "sidebar_enabled", "value": "true" },
+      { "name": "grid_view_enabled", "value": "true" }
+    ]
+  }
+{% endparse_json %}
+{% execute_query 'modules/dashboard_blog/migration_create_customization', data: blog_instance %}
+
+{% parse_json 'blog_post' %}
+{
+  "custom_model_type_name": "modules/dashboard_blog/blog_post",
+  "properties": [
+    { "name": "slug", "value": "this-is-the-first-post" },
+    { "name": "title", "value": "Welcome to PlatformOS Blog" },
+    { "name": "content", "value": "TBD" },
+    { "name": "excerpt", "value": "In this article you will learn about all the blog features." },
+    { "name": "author_name", "value": "Adam" },
+    { "name": "published_at", "value": "2019-04-03T00:00:00.000Z" },
+    { "name": "blog_instance_id", "value": "{{ g.customization_create.id }}" }
+  ]
+}
+{% endparse_json %}
+{% execute_query 'modules/dashboard_blog/migration_create_customization', data: blog_post %}
