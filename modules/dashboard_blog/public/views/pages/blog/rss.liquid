@@ -5,13 +5,13 @@ layout_name: 'layouts/blog/blog'
 ---
 
 {%- capture url_template -%}
-{% if params.language %}/{lang}{%- endif -%}/blog/rss/{slug}.rss
+{% if params.language %}/{lang}{%- endif -%}/blog/rss.rss
 {%- endcapture -%}
 {% assign url_params = context.location.href | extract_url_params: url_template %}
 
-{%- query_graph 'modules/dashboard_blog/get_blog_instance', scope: 'blog', result_name: bi, slug: url_params.slug, enabled: 'true' -%}
+{%- query_graph 'modules/dashboard_blog/get_blog_instance', result_name: "bi" -%}
 {% assign blog_instance = bi.customizations.results.first %}
-{% if url_params.slug != blank and blog_instance %}
+{% if blog_instance %}
   {%- assign today = 'now' | date: '%F' -%}
   {%- query_graph 'modules/dashboard_blog/get_blog_posts', result_name: g, published_at_lte: today, blog_instance_id: blog_instance.id, tags: params.tags -%}
   <?xml version="1.0" encoding="UTF-8"?>
@@ -22,7 +22,7 @@ layout_name: 'layouts/blog/blog'
       {%- for blog_post in g.customizations.results -%}
         <item>
           <title>{{ blog_post.title }}</title>
-          <description>{{ blog_post.content }}</description>
+          <description>{{ blog_post.excerpt }}</description>
           <pubDate>{{ blog_post.published_at  | localize: 'long' }}</pubDate>
           <link>https://desksnear.me/blog/post/{{ blog_post.slug }}</link>
           <guid>https://desksnear.me/blog/post/{{ blog_post.slug }}</guid>

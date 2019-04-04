@@ -69,8 +69,7 @@
         {%- if blog_instance.sidebar_enabled -%}
           <aside class="c-layout__sidebar">
 
-            {% assign rss_link = '/blog/rss/' | append: blog_instance.slug | append: '.rss' %}
-            {% capture rss_link %}/blog/rss/{{ blog_instance.slug }}.rss{% endcapture %}
+            {% assign rss_link = '/blog/rss.rss' %}
             {% include 'modules/dashboard_blog/blog/social-list',
               widget_title: 'Be in touch',
               facebook_link: blog_instance.facebook_link,
