@@ -10,7 +10,6 @@
 {% if pagination_page == 1 %}
   {% assign feature_post_first = true %}
 {% endif %}
-CURRENT FULL {{ context.location.href }}
 
 {%- query_graph 'modules/dashboard_blog/get_blog_instance', result_name: bi, scope: 'blog', enabled: 'true' -%}
 {% assign blog_instance = bi.customizations.results.first %}
@@ -46,7 +45,7 @@ CURRENT FULL {{ context.location.href }}
           {% if blog_posts.results.size == 0 %}
             <div class="o-section__title">
               Sorry, no content matched your criteria.<br>
-              <a href="{{ current_full_path }}">Please go back to main blog page</a>
+              <a href="{{ context.location.href }}">Please go back to main blog page</a>
             </div>
           {% endif %}
 

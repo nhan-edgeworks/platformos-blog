@@ -31,8 +31,8 @@
         <ul class="c-post__tags">
 
           {%- for post_tag in post_item.tags -%}
-            <li class="c-post__tags-item">
-              <a class="c-post__tags-link" href="/blog/{{ slug }}/category/{{ post_tag | replace: ' ', '-' }}">
+          <li class="c-post__tags-item">
+              <a class="c-post__tags-link" href="/blog/category/{{ post_tag | replace: ' ', '-' }}">
                 {{ post_tag }}
               </a>
             </li>
