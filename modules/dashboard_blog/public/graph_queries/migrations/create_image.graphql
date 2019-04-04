@@ -7,5 +7,10 @@ mutation create_image($raw_url: String!, $owner_id: ID!, $image_type: String!) {
       owner_type: "Customization"
       custom_attribute_name: $image_type
     }
-  ) { id }
+  ) { 
+    id
+    created_at
+    file_url
+    uploader_id
+  }
 }

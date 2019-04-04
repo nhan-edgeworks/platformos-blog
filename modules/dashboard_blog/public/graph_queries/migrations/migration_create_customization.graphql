@@ -3,6 +3,7 @@ mutation migration_create_customization($data: CustomizationInputType!) {
     customization: $data
   ) {
     id
+    properties
   }
 }
 
