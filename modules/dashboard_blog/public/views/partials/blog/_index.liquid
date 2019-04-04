@@ -1,5 +1,5 @@
 {%- capture url_template -%}
-  {% if params.language %}/{lang}{%- endif -%}/blog{/blog}{/category}{/tags}{?page,per_page}
+{% if params.language %}/{lang}{%- endif -%}/<%= blog_home=%>blog{/category}{/tags}{?page,per_page}
 {%- endcapture -%}
 
 {% assign url_params = context.location.href | extract_url_params: url_template %}
@@ -45,7 +45,7 @@
           {% if blog_posts.results.size == 0 %}
             <div class="o-section__title">
               Sorry, no content matched your criteria.<br>
-              <a href="{{ current_full_path }}">Please go back to main blog page</a>
+              <a href="{{ context.location.href }}">Please go back to main blog page</a>
             </div>
           {% endif %}
 
