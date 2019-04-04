@@ -1,4 +1,4 @@
-<div class="c-hero c-hero--bottom" data-src="{% if img_path %}{{ img_path }}{% else %}{{ 'modules/dashboard_blog/images/hero.jpg' | asset_url }}{% endif %}" data-lazy-load>
+<div class="c-hero c-hero--bottom" data-src="{% if img_path != blank %}{{ img_path }}{% else %}{{ 'modules/dashboard_blog/images/hero.jpg' | asset_url }}{% endif %}" data-lazy-load>
   <div class="c-hero__container o-container">
     {%- if title -%}
       <h1 class="c-hero__title">{{ title }}</h1>

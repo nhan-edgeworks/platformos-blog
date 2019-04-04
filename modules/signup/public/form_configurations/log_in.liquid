@@ -7,7 +7,7 @@ configuration:
     presence: true
 resource: Session
 authorization_policies: ""
-return_to: '/blog'
+return_to: '{% query_graph "modules/signup/get_user_with_email", email: form.email %}{% if g.people.results.first.dashboard %}/dashboard{% else %}<%= blog_home =%>{% endif %}'
 default_payload: "{}"
 ---
 {% parse_json "utils" %}
