@@ -1,5 +1,5 @@
 {%- capture url_template -%}
-  {% if params.language %}/{lang}{%- endif -%}/blog{/blog}{/category}{/tags}{?page,per_page}
+{% if params.language %}/{lang}{%- endif -%}/<%= blog_home=%>blog{/category}{/tags}{?page,per_page}
 {%- endcapture -%}
 
 {% assign url_params = context.location.href | extract_url_params: url_template %}
@@ -10,6 +10,7 @@
 {% if pagination_page == 1 %}
   {% assign feature_post_first = true %}
 {% endif %}
+CURRENT FULL {{ context.location.href }}
 
 {%- query_graph 'modules/dashboard_blog/get_blog_instance', result_name: bi, scope: 'blog', enabled: 'true' -%}
 {% assign blog_instance = bi.customizations.results.first %}
