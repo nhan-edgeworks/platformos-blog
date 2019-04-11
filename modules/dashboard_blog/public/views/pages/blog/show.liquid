@@ -87,7 +87,7 @@ layout_name: 'modules/dashboard_blog/blog'
 
     {%- include 'modules/dashboard_blog/blog/posts-section',
       section_title: 'Related Articles',
-      related_tags: blog_post.tags
+      related_tags: blog_post.tags,
       except_id: blog_post.id
     -%}
 
