@@ -68,8 +68,12 @@
 
         {%- if blog_instance.sidebar_enabled -%}
           <aside class="c-layout__sidebar">
-
             {% assign rss_link = '/blog/rss.rss' %}
+
+            {% if context.modules.dashboard_products != null %}
+              {% include 'modules/dashboard_products/sidebar' %}
+            {% endif %}
+
             {% include 'modules/dashboard_blog/blog/social-list',
               widget_title: 'Be in touch',
               facebook_link: blog_instance.facebook_link,

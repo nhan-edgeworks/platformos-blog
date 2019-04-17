@@ -1,0 +1,31 @@
+---
+name: product_form
+resource: modules/dashboard_products/product
+resource_owner: anyone
+redirect_to: "/dashboard/products"
+flash_notice: "You've successfully saved product"
+configuration:
+  properties:
+    name:
+      validation: {}
+    description:
+      validation: {}
+    price_cents:
+      validation: {}
+  custom_images:
+    image:
+      image:
+        validation: {}
+default_payload: ''
+---
+{% form html-novalidate: false %}
+  {% parse_json "utils" %}
+    {% include 'modules/utils/init' %}
+  {% endparse_json %}
+  {% include utils.form_errors %}
+  {% include utils.input with form_builder.fields.properties.name, type: "text", label: "Name" %}
+  {% include utils.input with form_builder.fields.properties.description, type: "text", label: "Description" %}
+  {% include utils.input with form_builder.fields.properties.price_cents, type: "text", label: "Price cents" %}
+  {% include utils.input with form_builder.fields.custom_images.image.image, type: "image", label: "Name" %}
+  {% include utils.submit_tag with "Save", class: "btn btn-primary" %}
+{% endform %}

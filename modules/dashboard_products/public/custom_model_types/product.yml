@@ -1,0 +1,10 @@
+name: product
+properties:
+  - name: name
+    type: string
+  - name: description
+    type: string
+  - name: image
+    type: photo
+  - name: price_cents
+    type: integer

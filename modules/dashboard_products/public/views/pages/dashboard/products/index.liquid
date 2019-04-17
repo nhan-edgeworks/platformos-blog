@@ -1,0 +1,13 @@
+---
+slug: dashboard/products
+layout_name: modules/dashboard/dashboard
+authorization_policies:
+- "modules/dashboard/dashboard_access"
+---
+{% query_graph "modules/dashboard_products/get_products", result_name: "s" %}
+
+<div class="pt-4">
+  <div class="col-lg-6 col-md-8 col-sm-12 col-12">
+    {%  include "modules/dashboard_products/products/list" %}
+  </div>
+</div>

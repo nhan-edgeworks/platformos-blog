@@ -1,0 +1,30 @@
+{% assign gateway_name = 'stripe' %}
+{% export gateway_name, namespace: "payments"  %}
+
+{%- parse_json 'data' -%}
+  {
+    "email": "{{ context.current_user.email }}",
+    "currency": "USD",
+    "description": "{{ product.properties.name }}",
+    "statement_descriptor": "{{ product.properties.name }}",
+    "capture": "true",
+    "amount": "{{ product.properties.price_cents }}"
+  }
+{%- endparse_json -%}
+
+{%- parse_json 'config' -%}
+  {
+    "button": "Buy Now",
+    "require_zip": "true",
+    "redirect_to": "/",
+    "success_message": "Thank you for your purchase, we are now delivering the book to your inbox."
+  }
+{%- endparse_json -%}
+
+{%-
+  include_form 'modules/payments/gateway_request_form',
+  request_type: 'create_payment',
+  config: config,
+  data: data
+%}
+

@@ -1,0 +1,15 @@
+---
+name: delete_product_form
+resource: Customization
+resource_owner: anyone
+redirect_to: "/dashboard/products"
+flash_notice: "You've successfully deleted product"
+configuration: {}
+default_payload: ''
+---
+{% form method: "delete" %}
+  {% parse_json "utils" %}
+    {% include 'modules/utils/init' %}
+  {% endparse_json %}
+  {% include utils.submit_tag with "Delete", class: "btn btn-danger" %}
+{% endform %}

@@ -1,0 +1,17 @@
+{% query_graph "modules/dashboard_products/get_products", result_name: "p" %}
+
+{% for product in p.customizations.results %}
+  <div class="o-widget">
+    <div class="o-widget__title">{{ product.properties.name }}</div>
+    <div class="c-social-list o-list-inline">
+      <img height="200" src="{{ product.image.normal}}"></img>
+      <p>{{ product.properties.description }}</p>
+      
+      {% include "modules/dashboard_products/checkout", product: product %}
+    </div>
+  </div>
+{% endfor %}
+
+
+
+

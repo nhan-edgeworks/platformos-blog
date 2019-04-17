@@ -1,0 +1,31 @@
+---
+slug: dashboard/payments
+layout_name: modules/dashboard/dashboard
+authorization_policies:
+- "modules/dashboard/dashboard_access"
+---
+<div class="mt-4">
+  <h4>List of payments:</h4>
+  {% query_graph "modules/payments/get_payments", per_page: 5 %}
+
+
+  <table class="table table-borderless pb-5">
+    <tr class="u-text-left">
+        <th>ID</th>
+        <th>Product</th>
+        <th>Payer</th>
+        <th>Amount</th>
+        <th>State</th>
+      </tr>
+    {% for payment in g.payments.results  %}
+      <tr>
+        <td>{{ payment.id }}</td>
+        <td>{{ payment.properties.description }}</td>
+        <td>{{ payment.user.email }}</td>
+        <td>{{ payment.properties.amount_cents | pricify_cents }}</td>
+        <td>{% if payment.properties.paid_at != blank %}Paid{% elsif payment.properties.failed_at != blank %}Failed{% else %}Pending{% endif %}</td>
+        <td><a href="https://dashboard.stripe.com/test/payments/{{ payment.properties.gateway_id }}" target="_blank">View in Stripe</a></td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>

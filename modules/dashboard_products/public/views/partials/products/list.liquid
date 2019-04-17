@@ -1,0 +1,30 @@
+{% query_graph "modules/dashboard_products/get_products", result_name: "p" %}
+
+{% if  p.customizations.results == blank %}
+  <a class="btn btn-primary" href="/dashboard/products/new">New Product</a>
+
+  <p>Please add product first. </p>
+{% else %}
+
+  <table class="table table-borderless pb-5">
+    <tr class="u-text-left">
+      <th>Name</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+    {% for product in p.customizations.results %}
+      <tr>
+        <td>{{ product.properties.name }}</td>
+        <td>{{ product.properties.price_cents | pricify_cents }}</td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <a href="/dashboard/products/new/{{ product.id }}" class='btn btn-link'>Edit</a>
+            {% include_form 'modules/dashboard_products/delete_product_form', resource_id: product.id %}
+          </div>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endif %}
+
+

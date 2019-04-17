@@ -1,0 +1,11 @@
+---
+slug: dashboard/products/new
+layout_name: modules/dashboard/dashboard
+authorization_policies:
+- "modules/dashboard/dashboard_access"
+---
+<div class="pt-4">
+  <div class="col-lg-6 col-md-8 col-sm-12 col-12">
+     {% include_form 'modules/dashboard_products/product_form', id: context.params.slugs %}
+  </div>
+</div>

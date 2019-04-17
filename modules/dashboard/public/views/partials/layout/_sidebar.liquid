@@ -19,6 +19,23 @@
           Blog
         </a>
       </li>
+
+      {% if context.modules.dashboard_products != null %}
+        <li class="nav-item">
+          <a class="nav-link {% if context.location.href == '/dashboard/products' %}active{% endif %}" href="/dashboard/products">
+            <span data-feather="file"></span>
+            Products
+          </a>
+        </li>
+      {% endif %}
+      {% if context.modules.payments != null %}
+        <li class="nav-item">
+          <a class="nav-link {% if context.location.href == '/dashboard/payments' %}active{% endif %}" href="/dashboard/payments">
+            <span data-feather="file"></span>
+            Payments
+          </a>
+        </li>
+      {% endif %}
       <li class="nav-item">
         <a class="nav-link" href="/dashboard/google_analytics">
           <span data-feather="layers"></span>

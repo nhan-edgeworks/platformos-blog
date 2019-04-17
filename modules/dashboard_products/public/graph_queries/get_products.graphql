@@ -1,0 +1,12 @@
+query {
+  customizations(name: "modules/dashboard_products/product") {
+  results {
+   id
+   properties
+   image: custom_image(name: "image") {
+     url 
+     normal: url(version: "transformed")
+   }
+
+  }}
+}
