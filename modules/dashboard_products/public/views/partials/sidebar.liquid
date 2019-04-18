@@ -6,8 +6,9 @@
     <div class="c-social-list o-list-inline">
       <img height="200" src="{{ product.image.normal}}"></img>
       <p>{{ product.properties.description }}</p>
-      
-      {% include "modules/dashboard_products/checkout", product: product %}
+      {% if context.modules.payments != null %}
+        {% include "modules/dashboard_products/checkout", product: product %}
+      {% endif %}      
     </div>
   </div>
 {% endfor %}

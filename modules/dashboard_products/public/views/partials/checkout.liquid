@@ -20,11 +20,16 @@
     "success_message": "Thank you for your purchase, we are now delivering the book to your inbox."
   }
 {%- endparse_json -%}
-
-{%-
-  include_form 'modules/payments/gateway_request_form',
-  request_type: 'create_payment',
-  config: config,
-  data: data
-%}
-
+<div class="checkout">
+  {%-
+    include_form 'modules/payments/gateway_request_form',
+    request_type: 'create_payment',
+    config: config,
+    data: data
+  %}
+</div>
+<style type="text/css" media="all">
+ .checkout button {
+    font-size: 27px;  
+  }
+</style>
