@@ -4951,3 +4951,7 @@ nav input {
 }
 
 body { padding-top: 44px; }
+
+button.stripe-button-el {
+  font-size: 27px;
+}
