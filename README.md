@@ -16,7 +16,7 @@ As there's no marketplace_builder folder use -p option for modules deploy
 
 `mk deploy staging -p`
 
-# Creating new releae
+# Creating new release
 
 Please run release script and follow the instructions:
 
