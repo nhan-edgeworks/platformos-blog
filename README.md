@@ -1,4 +1,4 @@
-# Introuduction
+# Introduction
 
 PlatformOS Blog module will help you kick start simple blog page. Currently project consist of multiple modules that could be used separately or can be easily importeded to other projects. It can be installed on any production or staging instance via Partner Portal [here](https://portal.apps.near-me.com/marketplace/pos_modules/new?id=19).
 
