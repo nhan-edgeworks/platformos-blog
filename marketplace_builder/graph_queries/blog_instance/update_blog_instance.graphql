@@ -1,0 +1,14 @@
+mutation update_blog_instance($id: ID!, $tags_filter: String) {
+  customization_update(
+    id: $id,
+    form_configuration_name: "update_blog_instance",
+    customization: {
+      properties: [
+        {name: "tags_filter", value: $tags_filter}
+      ]
+    }
+  )
+  {
+    id
+  }
+}
