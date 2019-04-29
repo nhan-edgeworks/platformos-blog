@@ -1,5 +1,5 @@
 {%- capture url_template -%}
-{% if params.language %}/{lang}{%- endif -%}/<%= blog_home=%>blog{/category}{/tags}{?page,per_page}
+{% if params.language %}/{lang}{%- endif -%}/<%= &blog_path =%>blog{/category}{/tags}{?page,per_page}
 {%- endcapture -%}
 
 {% assign url_params = context.location.href | extract_url_params: url_template %}
@@ -85,7 +85,7 @@
               tags: blog_instance.tags_filter
             -%}
 
-            {%- 
+            {%-
               include 'modules/dashboard_blog/blog/facebook-widget',
               facebook_link: blog_instance.facebook_link
             %}
