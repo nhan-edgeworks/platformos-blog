@@ -46,9 +46,6 @@ configuration:
     linkedin_link:
       validation:
         presence: false
-    google_plus_link:
-      validation:
-        presence: false
     facebook_link:
       validation:
         presence: false
@@ -92,7 +89,6 @@ return_to: /dashboard/blog/settings
     {%- include utils.input with f.properties.twitter_link, type: "text" -%}
     {%- include utils.input with f.properties.linkedin_link, type: "text" -%}
     {%- include utils.input with f.properties.instagram_link, type: "text" -%}
-    {%- include utils.input with f.properties.google_plus_link, type: "text" -%}
 
     {% include utils.submit_tag with "Save", class: 'btn btn-primary btn-lg', disable_with: 'Saving...' %}
   </div>

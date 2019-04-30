@@ -14,8 +14,6 @@ custom_attributes:
   attribute_type: string
 - name: twitter_link
   attribute_type: string
-- name: google_plus_link
-  attribute_type: string
 - name: instagram_link
   attribute_type: string
 - name: linkedin_link

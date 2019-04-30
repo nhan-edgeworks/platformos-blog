@@ -33,7 +33,6 @@ query get_blog_instance(
       facebook_app_id: property(name: "facebook_app_id")
       facebook_link: property(name: "facebook_link")
       twitter_link: property(name: "twitter_link")
-      google_plus_link: property(name: "google_plus_link")
       instagram_link: property(name: "instagram_link")
       linkedin_link: property(name: "linkedin_link")
       enabled: property(name: "enabled")
