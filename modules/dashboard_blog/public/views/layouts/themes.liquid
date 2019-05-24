@@ -1,0 +1,7 @@
+{% parse_json 'theme_settings' %}
+  {% include 'modules/dashboard_blog/themes/theme_settings' %}
+{% endparse_json %} 
+
+{% assign current_theme_file = theme_settings.theme_path | append: theme_settings.current_theme | append: '/' | append: theme_settings.theme_index %}
+
+{% include current_theme_file with theme_settings %}
