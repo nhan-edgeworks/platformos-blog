@@ -2,4 +2,11 @@
 slug: 'blog/category'
 layout_name: 'modules/dashboard_blog/themes'
 ---
-{% include 'modules/dashboard_blog/blog/index' %}
+{% parse_json 'settings' %}
+  {% include 'modules/dashboard_blog/settings' %}
+{% endparse_json %}
+
+{% assign current_theme_path = settings.theme.theme_path | append: settings.theme.current_theme %}
+{% assign blog_category = current_theme_path | append: '/' | append: 'category' %}
+
+{% include blog_category with settings %}
