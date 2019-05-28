@@ -1,0 +1,26 @@
+---
+name: update_themes_form
+resource: Customization
+resource_owner: anyone
+redirect_to: "/dashboard/themes"
+flash_notice: "You've successfully updated theme"
+configuration:
+  properties:
+    current_theme:
+      validation: {}
+default_payload: ''
+---
+{% form html-novalidate: false %}
+  {% parse_json "utils" %}
+    {% include 'modules/utils/init' %}
+  {% endparse_json %}
+  {% include utils.form_errors %}
+  Choose a theme: 
+  <select name="{{ form_builder.fields.properties.current_theme.name }}">
+    {% for theme in settings.theme.theme_list %}
+      <option value="{{ theme.name }}" 
+      {% if result.current_theme == theme.name %} selected {% endif %}>{{ theme.display_name }}</option>
+    {% endfor %}
+  </select> 
+  {% include utils.submit_tag with "Change theme", class: "btn btn-primary" %}
+{% endform %}

@@ -1,0 +1,15 @@
+query get_themes {
+  customizations(
+    is_deleted: false, 
+    name: "modules/dashboard/themes"
+    sort: [
+      { name: "id", order: DESC }
+    ]) {
+    total_entries
+    total_pages
+    results {
+      id
+      current_theme: property(name: "current_theme")
+    }
+  }
+}

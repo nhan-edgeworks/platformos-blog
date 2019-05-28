@@ -1,0 +1,4 @@
+name: themes
+custom_attributes:
+- name: current_theme
+  type: string
