@@ -1,0 +1,24 @@
+{% comment %} 
+  @TODO: 
+  - Theme thumbail image
+{% endcomment %}
+{% execute_query 'modules/dashboard/get_themes', result_name: 'g' %}
+{% assign result = g.customizations.results.first %}
+{
+  "current_theme": "{{ result.current_theme }}",
+  "theme_path"   : "modules/dashboard_blog/themes/",
+  "theme_index"  : "layout",
+  "theme_list"   : [
+    {
+      "name"        : "blog2",
+      "display_name": "Blog2 theme",
+      "thumbnail"   : "Blog2_thumbnail",
+      "description" : "The theme in demo"
+    }, {
+      "name"        : "default",
+      "display_name": "Default theme",
+      "thumbnail"   : "Blog2_thumbnail",
+      "description" : "The theme in demo"
+    }
+  ]
+}

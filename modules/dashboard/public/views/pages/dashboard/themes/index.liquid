@@ -1,0 +1,20 @@
+---
+slug: dashboard/themes
+layout_name: modules/dashboard/dashboard
+authorization_policies:
+- modules/dashboard/dashboard_access
+---
+
+{% parse_json 'settings' %}
+  {% include 'modules/dashboard_blog/settings' %}
+{% endparse_json %}
+
+{% comment %} 
+  @TODO: get resource_id for theme option
+{% endcomment %}
+
+{% execute_query 'modules/dashboard/get_themes', result_name: 'g' %}
+{% assign result = g.customizations.results.first %}
+
+{% include_form 'modules/dashboard/update_themes_form' with settings, result, resource_id: result.id, resource_type: 'modules/dashboard/themes' %}
+
