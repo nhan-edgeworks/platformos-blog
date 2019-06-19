@@ -1,0 +1,39 @@
+{
+  "name": "BlogPlatformOS",
+  "version": "1.0.0",
+  "description": "BlogPlatformOS - blog platform for PlatformOS",
+  "private": true,
+  "config": {
+    "analyze": false
+  },
+  "scripts": {
+    "start": "npm run clean && NODE_ENV=development npx webpack --config webpack.config.js",
+    "build": "npm run clean && NODE_ENV=production npx webpack --config webpack.config.js",
+    "clean": "git clean -Xfq $npm_package_config_build_dir"
+  },
+  "browserslist": [
+    "cover 90%",
+    "last 2 chrome versions",
+    "last 2 edge major versions",
+    "last 2 ie major versions",
+    "last 2 firefox major versions",
+    "last 4 safari major versions",
+    "not dead"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "bootstrap": "^4.3.1",
+    "css-loader": "^3.0.0",
+    "jquery": "^3.4.1",
+    "node-sass": "^4.12.0",
+    "popper.js": "^1.15.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4"
+  }
+}
