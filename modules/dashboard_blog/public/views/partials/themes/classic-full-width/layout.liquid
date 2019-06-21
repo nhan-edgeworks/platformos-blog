@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {%- include 'modules/dashboard_blog/themes/classic-full-width/share/csrf' %}
+  {%- include 'modules/dashboard_blog/themes/classic-full-width/share/head' with theme_settings -%}
+  {% yield 'head_content' %}
+</head>
+
+<body class="{% if is_logged_in %}logged-in{% endif %}">
+  {% include 'modules/utils/flash_messages' %}
+
+  {%- include "modules/dashboard_blog/themes/classic-full-width/header" with theme_settings -%}
+
+  <main>
+    {{ content_for_layout }}
+  </main>
+
+  {%- include "modules/dashboard_blog/themes/classic-full-width/footer" with theme_settings -%}
+</body>
+</html>
