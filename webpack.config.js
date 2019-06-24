@@ -3,8 +3,9 @@ const theme_path = './modules/dashboard_blog/public/views/partials/themes/';
 
 module.exports = {
   entry: {
-    app: './src/app.js',
+    'themes/common': './src/app.js',
     'themes/blog2': theme_path + 'blog2/assets/theme.js',
+    'themes/classic-full-width': theme_path + 'classic-full-width/assets/theme.js',
   },
   output: {
     filename: '[name].js',
