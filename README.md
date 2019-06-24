@@ -7,6 +7,7 @@ PlatformOS Blog module will help you kick start simple blog page. Currently proj
 Project is still in progress, some of the features/tasks that are priority are listed below
 
 * webpack integration
+  * webpack for themes are done
 * payment integration
 * pages management (cms)
 

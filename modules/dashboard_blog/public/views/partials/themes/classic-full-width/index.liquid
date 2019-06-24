@@ -1,0 +1,13 @@
+{%- query_graph 'modules/dashboard_blog/get_blog_posts', result_name: g, published_at_lte: today, per_page: per_page, page: pagination_page, blog_instance_id: blog_instance.id, tags: tags -%}
+{% assign blog_posts = g.customizations %}
+
+{% for post in blog_posts %}
+
+  {%- include 'modules/dashboard_blog/themes/blog2/blog/post',
+    post_item: post,
+    slug: instance_slug
+  -%}
+
+{% endfor %}
+
+index file
