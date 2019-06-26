@@ -3,6 +3,7 @@
 <head>
   {%- include 'modules/dashboard_blog/themes/classic-full-width/share/csrf' %}
   {%- include 'modules/dashboard_blog/themes/classic-full-width/share/head' with theme_settings -%}
+
   {% yield 'head_content' %}
 </head>
 
@@ -14,7 +15,7 @@
   <main>
     {{ content_for_layout }}
   </main>
-
   {%- include "modules/dashboard_blog/themes/classic-full-width/footer" with theme_settings -%}
+
 </body>
 </html>
