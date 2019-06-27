@@ -6,6 +6,8 @@ module.exports = {
     'themes/common': './src/app.js',
     'themes/blog2': theme_path + 'blog2/assets/theme.js',
     'themes/classic-full-width': theme_path + 'classic-full-width/assets/theme.js',
+    'themes/classic-right-slidebar': theme_path + 'classic-right-slidebar/assets/theme.js',
+    'themes/classic-left-slidebar': theme_path + 'classic-left-slidebar/assets/theme.js',
   },
   output: {
     filename: '[name].js',
