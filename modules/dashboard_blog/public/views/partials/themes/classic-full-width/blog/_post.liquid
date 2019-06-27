@@ -16,20 +16,20 @@
 
 {%- query_graph 'modules/dashboard_blog/get_blog_posts', result_name: g, published_at_lte: today, per_page: per_page, page: pagination_page, blog_instance_id: blog_instance.id, tags: tags -%}
 {% assign blog_posts = g.customizations.results %}
-<script>console.log({{ blog_posts | json }});</script>
-
 <section>
     <div class="container">
         <div class="row">
             <div class="col mb-3">
-                <h1 class="title">Category - <span class="title_color">{{tags | capitalize}}</span> </h1>
+                <h1 class="title">{{blog_instance.title}} - <span class="title_color">Full Width</span> </h1>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12 mt-5">
                 <div class="row">
                     {% for blog_post in blog_posts %}
-                    <div class="col-6 d-inline">
+                    {%- capture post_href -%}/blog/post/blog/{{ blog_post.slug }}{%- endcapture -%}
+
+                    <div class="col-sm-12 col-md-6 d-inline">
                         <div class="card ">
                             <figure>
                                 <img class="card-img-top" src="{{ blog_post.hero_image.transformed }}" emplate
@@ -37,12 +37,14 @@
                             </figure>
                             <div class="card-body mb-5 p-0">
                                 <p class="card_time">{{blog_post.published_at}}</p>
-                                <p>Categories:
+                                <p>Category:
                                     {% for tag in blog_post.tags%}
                                     <a href="/blog/category/{{tag}}">{{ tag | join: ',' }}.</a>
                                     {% endfor%}
                                 </p>
-                                <h5 class="card-title">{{blog_post.title}} </h5>
+                                <a href="{{post_href}}" style="color: #000">
+                                    <h5 class="card-title" href="{{post_href}}">{{blog_post.title}} </h5>
+                                </a>
                                 <p class="card-text">{{blog_post.excerpt}}</p>
                             </div>
                         </div>

@@ -8,5 +8,4 @@ layout_name: 'modules/dashboard_blog/themes'
 
 {% assign current_theme_path = settings.theme.theme_path | append: settings.theme.current_theme %}
 {% assign blog_category = current_theme_path | append: '/' | append: 'category' %}
-
 {% include blog_category with settings %}
