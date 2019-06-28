@@ -18,6 +18,9 @@
 {%- query_graph 'modules/dashboard_blog/get_blog_posts', result_name: g, published_at_lte: today, per_page: per_page, page: pagination_page, blog_instance_id: blog_instance.id, tags: tags -%}
 {% assign blog_posts = g.customizations.results %}
 <section>
+    <div class="c-hero" data-src="{{blog_instance.header_image.transformed}}"
+        style="background-image: url('{{blog_instance.header_image.transformed}}')">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col mb-3">
@@ -62,7 +65,7 @@
                         <img class="media_img mr-3" src="{{blog_post.hero_image.transformed}}"
                             alt="Generic placeholder image">
                     </div>
-                    <div class="media-body" >
+                    <div class="media-body">
                         <a href="{{post_href}}" style="color:#000">
                             <h5 class="text">{{blog_post.title}}</h5>
                         </a>
@@ -70,18 +73,18 @@
                 </div>
                 {% endfor %}
                 <hr class="mt-5">
-                    <div class="media_tag mt-5">
-                        <h4 class="tag_title">Tags</h4>
-                        <div class="tag_item mt-4 ml-2">
-                            <p class="tag">Design</p>
-                            <p class="tag">Art</p>
-                            <p class="tag">Graphic</p>
-                            <p class="tag">HTML</p>
-                            <p class="tag">CSS</p>
-                            <p class="tag">SASS</p>
-                            <p class="tag">WordPress</p>
-                        </div>
+                <div class="media_tag mt-5">
+                    <h4 class="tag_title">Tags</h4>
+                    <div class="tag_item mt-4 ml-2">
+                        <p class="tag">Design</p>
+                        <p class="tag">Art</p>
+                        <p class="tag">Graphic</p>
+                        <p class="tag">HTML</p>
+                        <p class="tag">CSS</p>
+                        <p class="tag">SASS</p>
+                        <p class="tag">WordPress</p>
                     </div>
+                </div>
             </div>
         </div>
     </div>

@@ -18,6 +18,9 @@
 {%- query_graph 'modules/dashboard_blog/get_blog_posts', result_name: g, published_at_lte: today, per_page: per_page, page: pagination_page, blog_instance_id: blog_instance.id, tags: tags -%}
 {% assign blog_posts = g.customizations.results %}
 <section>
+    <div class="c-hero" data-src="{{blog_instance.header_image.transformed}}"
+        style="background-image: url('{{blog_instance.header_image.transformed}}')">
+    </div>
     <div class="container">
         <div class="row">
             <div class="col mb-3">
