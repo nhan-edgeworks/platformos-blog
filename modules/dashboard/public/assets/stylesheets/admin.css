@@ -612,6 +612,31 @@ textarea {
 
 input[type='number'].form-control {
   line-height: 1.45; }
+input[type='file'] {
+  height: 200px; 
+  opacity: 0;
+  cursor: pointer;
+}
+.show_img {
+  height: 100%;
+  width: auto;
+  position: absolute;
+}
+
+.upload-file {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  opacity: 0.2;
+  font-weight: bold;
+}
+
+.file-upload-wrapper {
+  border: 1px solid #ced4da;
+  position: relative;
+  overflow: hidden;
+}
 
 form.with-borders {
   border: 1px solid #ddd;

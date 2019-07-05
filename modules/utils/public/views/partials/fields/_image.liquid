@@ -24,15 +24,17 @@
   </div>
 {% endif %}
 
-<input
-  type="file"
-  value="{{ _value }}"
-  class="form-control {{ _input_class }}"
-  name="{{ _name }}"
-  id="{{ _input_id }}"
-  {% if placeholder != blank %} placeholder="{{ _placeholder }}"{% endif %}
-  {% if _readonly == true or _readonly == 'true' %} readonly {% endif %}
-  {% if _required == true or _required == 'true' %} required {% endif %}
-  {% if _disabled == true or _disabled == 'true' %} disabled {% endif %}
-  {{ _input_data_attrs }}
-/>
+<div class="file-upload-wrapper">
+  <div class="upload-file">
+    <img class="upload" src="https://img.icons8.com/wired/100/000000/upload.png">
+    <p>Click Upload File</p>
+  </div>
+  <img class="show_img" id="{{ _input_id }}"/>
+  <input type="file" value="{{ _value }}" class="form-control {{ _input_class }}" name="{{ _name }}" id="{{ _input_id }}"
+    {% if placeholder != blank %} placeholder="{{ _placeholder }}" {% endif %}
+    {% if _readonly == true or _readonly == 'true' %} readonly {% endif %}
+    {% if _required == true or _required == 'true' %} required {% endif %}
+    {% if _disabled == true or _disabled == 'true' %} disabled {% endif %} {{ _input_data_attrs }} onchange="readURLblog(this);"/>
+</div>
+
+
